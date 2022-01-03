@@ -14,6 +14,7 @@ type position struct {
 	aim     int
 }
 
+// link: https://adventofcode.com/2021/day/2
 func main() {
 	file, err := os.Open("advent2021/resources/advent2021-2.txt")
 	if err != nil {

@@ -7,7 +7,14 @@ import (
 	"strconv"
 )
 
+// link: https://adventofcode.com/2021/day/1
 func main() {
+	// instantiate variables
+	increases := 0
+	current_depth := 0
+	last_depth := 0
+
+	// open file and read in puzzle input
 	file, err := os.Open("advent2021/resources/advent2021-1.txt")
 	if err != nil {
 		fmt.Println(err.Error())
@@ -20,9 +27,8 @@ func main() {
 		int_val, _ := strconv.Atoi(val)
 		lines = append(lines, int_val)
 	}
-	increases := 0
-	current_depth := 0
-	last_depth := 0
+
+	// parse input, increment increases when the number increases
 	for i := range lines {
 		if i == 0 {
 			current_depth = lines[i]
@@ -34,5 +40,7 @@ func main() {
 			increases += 1
 		}
 	}
+
+	// print output
 	fmt.Println(increases)
 }
